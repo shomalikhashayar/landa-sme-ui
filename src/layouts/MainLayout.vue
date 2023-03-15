@@ -123,15 +123,14 @@
 
         <q-list>
           <q-expansion-item
-            active-class="tab-active"
             icon="shop_2"
             label="بازرگانی، خرید و فروش"
             class="sub-item text-grey-8"
           >
             <q-item
               clickable
-              :active="link === 'active'"
-              @click="link = 'active'"
+              :active="link === 'content_paste'"
+              @click="link = 'content_paste'"
               active-class="my-menu-link"
             >
               <q-item-section avatar class="item-section q-mr-xs">
@@ -207,10 +206,10 @@
               @click="link = 'arrow_downward'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="arrow_downward"></q-icon>
               </q-item-section>
-              <q-item-section>Receipts</q-item-section>
+              <q-item-section>دریافت‌ها</q-item-section>
             </q-item>
             <q-item
               clickable
@@ -218,10 +217,10 @@
               @click="link = 'arrow_upward'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="arrow_upward"></q-icon>
               </q-item-section>
-              <q-item-section>Payments</q-item-section>
+              <q-item-section>پرداخت‌ها</q-item-section>
             </q-item>
             <q-item
               clickable
@@ -229,10 +228,10 @@
               @click="link = 'attach_money'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="attach_money"></q-icon>
               </q-item-section>
-              <q-item-section>Bills</q-item-section>
+              <q-item-section>هزینه</q-item-section>
             </q-item>
             <q-item
               clickable
@@ -240,10 +239,10 @@
               @click="link = 'swap_horiz'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="swap_horiz"></q-icon>
               </q-item-section>
-              <q-item-section>Transfer Money</q-item-section>
+              <q-item-section>انتقال وجه</q-item-section>
             </q-item>
             <q-item
               clickable
@@ -251,10 +250,10 @@
               @click="link = 'subject'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="subject"></q-icon>
               </q-item-section>
-              <q-item-section>Bank Accounts</q-item-section>
+              <q-item-section>حساب‌های بانکی</q-item-section>
             </q-item>
             <q-item
               clickable
@@ -262,10 +261,10 @@
               @click="link = 'monetization_on'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="monetization_on"></q-icon>
               </q-item-section>
-              <q-item-section>Cashs</q-item-section>
+              <q-item-section>صندوق</q-item-section>
             </q-item>
           </q-expansion-item>
 
@@ -280,10 +279,10 @@
               @click="link = 'monetization_on'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="arrow_downward"></q-icon>
               </q-item-section>
-              <q-item-section>Receipts</q-item-section>
+              <q-item-section>سند حسابداری</q-item-section>
             </q-item>
             <q-item
               clickable
@@ -291,10 +290,10 @@
               @click="link = 'arrow_upward'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="arrow_upward"></q-icon>
               </q-item-section>
-              <q-item-section>Payments</q-item-section>
+              <q-item-section>عملیات حسابداری</q-item-section>
             </q-item>
             <q-item
               clickable
@@ -302,10 +301,10 @@
               @click="link = 'attach_money'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="attach_money"></q-icon>
               </q-item-section>
-              <q-item-section>Bills</q-item-section>
+              <q-item-section>سرفصل حساب‌ها</q-item-section>
             </q-item>
             <q-item
               clickable
@@ -313,27 +312,54 @@
               @click="link = 'swap_horiz'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="swap_horiz"></q-icon>
               </q-item-section>
-              <q-item-section>Transfer Money</q-item-section>
+              <q-item-section>گروه حساب‌ها</q-item-section>
             </q-item>
             <q-item
               clickable
-              :active="link === 'bank-accounts'"
-              @click="link = 'bank-accounts'"
+              :active="link === 'general-ledger'"
+              @click="link = 'general-ledger'"
               active-class="my-menu-link"
             >
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="subject"></q-icon>
               </q-item-section>
-              <q-item-section>Bank Accounts</q-item-section>
+              <q-item-section>حساب‌های کل</q-item-section>
             </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="monetization_on"></q-icon>
+            <q-item
+              clickable
+              :active="link === 'menu'"
+              @click="link = 'menu'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar class="item-section q-mr-xs">
+                <q-icon color="grey-8" name="menu"></q-icon>
               </q-item-section>
-              <q-item-section>Cashs</q-item-section>
+              <q-item-section>حساب‌های معین</q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              :active="link === 'view_module'"
+              @click="link = 'view_module'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar class="item-section q-mr-xs">
+                <q-icon color="grey-8" name="view_module"></q-icon>
+              </q-item-section>
+              <q-item-section>حساب‌های تفضیلی</q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              :active="link === 'browse_gallery'"
+              @click="link = 'browse_gallery'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar class="item-section q-mr-xs">
+                <q-icon color="grey-8" name="browse_gallery"></q-icon>
+              </q-item-section>
+              <q-item-section>سال مالی</q-item-section>
             </q-item>
           </q-expansion-item>
 
@@ -342,41 +368,16 @@
             label="حقوق و دستمزد"
             class="sub-item text-grey-8"
           >
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="arrow_downward"></q-icon>
+            <q-item
+              clickable
+              :active="link === 'account_box'"
+              @click="link = 'account_box'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar class="item-section q-mr-xs">
+                <q-icon color="grey-8" name="account_box"></q-icon>
               </q-item-section>
-              <q-item-section>Receipts</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="arrow_upward"></q-icon>
-              </q-item-section>
-              <q-item-section>Payments</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="attach_money"></q-icon>
-              </q-item-section>
-              <q-item-section>Bills</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="swap_horiz"></q-icon>
-              </q-item-section>
-              <q-item-section>Transfer Money</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="subject"></q-icon>
-              </q-item-section>
-              <q-item-section>Bank Accounts</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="monetization_on"></q-icon>
-              </q-item-section>
-              <q-item-section>Cashs</q-item-section>
+              <q-item-section>حقوق و دستمزد ماهانه</q-item-section>
             </q-item>
           </q-expansion-item>
           <q-expansion-item
@@ -384,41 +385,38 @@
             label="انبارداری"
             class="sub-item text-grey-8"
           >
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="arrow_downward"></q-icon>
+            <q-item
+              clickable
+              :active="link === 'swap_vert'"
+              @click="link = 'swap_vert'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar class="item-section q-mr-xs">
+                <q-icon color="grey-8" name="swap_vert"></q-icon>
               </q-item-section>
-              <q-item-section>Receipts</q-item-section>
+              <q-item-section>گزارش موجودی کالا</q-item-section>
             </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="arrow_upward"></q-icon>
-              </q-item-section>
-              <q-item-section>Payments</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="attach_money"></q-icon>
-              </q-item-section>
-              <q-item-section>Bills</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="swap_horiz"></q-icon>
-              </q-item-section>
-              <q-item-section>Transfer Money</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
+            <q-item
+              clickable
+              :active="link === 'opening-stock'"
+              @click="link = 'opening-stock'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="subject"></q-icon>
               </q-item-section>
-              <q-item-section>Bank Accounts</q-item-section>
+              <q-item-section>موجودی اول دوره</q-item-section>
             </q-item>
-            <q-item clickable>
-              <q-item-section avatar class="item-section">
-                <q-icon color="grey-8" name="monetization_on"></q-icon>
+            <q-item
+              clickable
+              :active="link === 'modify-stock'"
+              @click="link = 'modify-stock'"
+              active-class="my-menu-link"
+            >
+              <q-item-section avatar class="item-section q-mr-xs">
+                <q-icon color="grey-8" name="subject"></q-icon>
               </q-item-section>
-              <q-item-section>Cashs</q-item-section>
+              <q-item-section>اصلاح موجودی</q-item-section>
             </q-item>
           </q-expansion-item>
           <q-expansion-item
@@ -427,37 +425,37 @@
             class="sub-item text-grey-8"
           >
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="arrow_downward"></q-icon>
               </q-item-section>
               <q-item-section>Receipts</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="arrow_upward"></q-icon>
               </q-item-section>
               <q-item-section>Payments</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="attach_money"></q-icon>
               </q-item-section>
               <q-item-section>Bills</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="swap_horiz"></q-icon>
               </q-item-section>
               <q-item-section>Transfer Money</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="subject"></q-icon>
               </q-item-section>
               <q-item-section>Bank Accounts</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="monetization_on"></q-icon>
               </q-item-section>
               <q-item-section>Cashs</q-item-section>
@@ -469,37 +467,37 @@
             class="sub-item text-grey-8"
           >
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="arrow_downward"></q-icon>
               </q-item-section>
               <q-item-section>Receipts</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="arrow_upward"></q-icon>
               </q-item-section>
               <q-item-section>Payments</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="attach_money"></q-icon>
               </q-item-section>
               <q-item-section>Bills</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="swap_horiz"></q-icon>
               </q-item-section>
               <q-item-section>Transfer Money</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="subject"></q-icon>
               </q-item-section>
               <q-item-section>Bank Accounts</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="monetization_on"></q-icon>
               </q-item-section>
               <q-item-section>Cashs</q-item-section>
@@ -512,37 +510,37 @@
             id="reports"
           >
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="arrow_downward"></q-icon>
               </q-item-section>
               <q-item-section>Receipts</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="arrow_upward"></q-icon>
               </q-item-section>
               <q-item-section>Payments</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="attach_money"></q-icon>
               </q-item-section>
               <q-item-section>Bills</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="swap_horiz"></q-icon>
               </q-item-section>
               <q-item-section>Transfer Money</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="subject"></q-icon>
               </q-item-section>
               <q-item-section>Bank Accounts</q-item-section>
             </q-item>
             <q-item clickable>
-              <q-item-section avatar class="item-section">
+              <q-item-section avatar class="item-section q-mr-xs">
                 <q-icon color="grey-8" name="monetization_on"></q-icon>
               </q-item-section>
               <q-item-section>Cashs</q-item-section>
@@ -550,7 +548,7 @@
           </q-expansion-item>
           <q-separator inset />
           <div class="settings-header" @click="whenDashboardClicked">
-            <q-item clickable class="flex items-center">
+            <q-item clickable class="flex items-center q-mb-md">
               <q-icon
                 name="settings"
                 class="settings q-mr-md"
@@ -575,6 +573,8 @@ import { ref } from "vue";
 // Drawer
 const drawerRight = ref(false);
 const title = ref("دفتر کارگشا - فهرست پیش فاکتور");
-// Active
+// Active for sub-items
 const link = ref("active");
+//Active items
+const active = ref("activeItems");
 </script>
