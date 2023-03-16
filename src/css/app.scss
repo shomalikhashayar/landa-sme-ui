@@ -1,11 +1,10 @@
 // app global css in SCSS form
 
 .my-menu-link {
-  color: black;
-  background-color: #ebf5ff;
-}
-
-.my-item-active {
-  color: white;
-  background-color: rgb(27, 99, 255);
+  border-right: none;
+  border-left: 3px solid;
+  border-left-color: #2196f3;
+  background-color: #f0f0f0 !important;
+  color: #494949;
+  border-radius: 4px;
 }
