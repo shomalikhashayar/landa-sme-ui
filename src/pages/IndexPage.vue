@@ -9,3 +9,5 @@ export default defineComponent({
   name: "IndexPage",
 });
 </script>
+
+<style></style>
