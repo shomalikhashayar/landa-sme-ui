@@ -52,7 +52,6 @@
       row-key="name"
       :selected-rows-label="getSelectedString"
       selection="multiple"
-      dense
       v-model:selected="selected"
       flat
     />
