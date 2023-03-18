@@ -83,15 +83,15 @@
     </q-header>
 
     <q-drawer
-      side="right"
+      side="left"
       v-model="drawerRight"
       show-if-above
-      :width="301"
+      :width="300"
       :breakpoint="500"
       class="drawer bg-white"
       style="font-size: 12px; font-weight: 600"
     >
-      <div class="searchbar-sidebar q-mb-md q-pr-lg">
+      <div class="searchbar-sidebar q-mb-md q-px-md">
         <q-input
           color="grey-5"
           outlined
@@ -108,7 +108,7 @@
 
       <q-list class="q-px-lg">
         <div class="settings" style="cursor: pointer">
-          <q-item class="flex items-center q-mr-sm">
+          <q-item class="flex items-center q-mr-sm" to="/dashboard">
             <q-icon
               name="dashboard"
               class="dashboard q-mr-xs"
@@ -124,6 +124,7 @@
           class="sub-item text-grey-8"
         >
           <q-item
+            to="/proformas"
             clickable
             :active="link === 'content_paste'"
             @click="link = 'content_paste'"
