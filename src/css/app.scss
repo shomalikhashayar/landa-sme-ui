@@ -36,3 +36,15 @@
 .q-table--cell-separator tbody tr:not(:last-child) > td {
   border: none;
 }
+
+.q-table {
+  margin-top: 24px;
+}
+
+.toolbar {
+  border: 1px solid #e7e7e7;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  background-color: white;
+}
