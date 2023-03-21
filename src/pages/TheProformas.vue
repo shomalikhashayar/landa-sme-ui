@@ -47,18 +47,23 @@
   </div>
   <div class="" dir="rtl">
     <q-table
-      :rows="rows"
+      :rows="usersData"
       :columns="columns"
       row-key="name"
       :selected-rows-label="getSelectedString"
       selection="multiple"
       v-model:selected="selected"
       flat
+      :loading="loading"
     />
   </div>
 </template>
+
 <script setup>
 import { ref, computed } from "vue";
+import { api } from "boot/axios";
+import { useQuasar } from "quasar";
+import { onMounted, onBeforeMount, onBeforeUnmount, onUnmounted } from "vue";
 
 const selected = ref([]);
 const getSelectedString = () => {
@@ -114,107 +119,18 @@ const columns = [
   },
 ];
 
-const rows = [
-  {
-    id: "۱",
-    number: "۰",
-    customer: "هلدینگ بابک زنجانی",
-    description: "سه هزار میلیارد پول نفت ملت",
-    totalSum: "۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰",
-    discount: "۰",
-    type: "مسروقه",
-    status: "زندانی",
-  },
-  {
-    id: "۲",
-    number: "۰",
-    customer: "هلدینگ بابک زنجانی",
-    description: "سه هزار میلیارد پول نفت ملت",
-    totalSum: "۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰",
-    discount: "۰",
-    type: "مسروقه",
-    status: "زندانی",
-  },
-  {
-    id: "۳",
-    number: "۰",
-    customer: "هلدینگ بابک زنجانی",
-    description: "سه هزار میلیارد پول نفت ملت",
-    totalSum: "۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰",
-    discount: "۰",
-    type: "مسروقه",
-    status: "زندانی",
-  },
-  {
-    id: "۴",
-    number: "۰",
-    customer: "هلدینگ بابک زنجانی",
-    description: "سه هزار میلیارد پول نفت ملت",
-    totalSum: "۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰",
-    discount: "۰",
-    type: "مسروقه",
-    status: "زندانی",
-  },
-  {
-    id: "۵",
-    number: "۰",
-    customer: "هلدینگ بابک زنجانی",
-    description: "سه هزار میلیارد پول نفت ملت",
-    totalSum: "۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰",
-    discount: "۰",
-    type: "مسروقه",
-    status: "زندانی",
-  },
+const usersData = ref([]);
 
-  {
-    id: "۶",
-    number: "۰",
-    customer: "هلدینگ بابک زنجانی",
-    description: "سه هزار میلیارد پول نفت ملت",
-    totalSum: "۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰",
-    discount: "۰",
-    type: "مسروقه",
-    status: "زندانی",
-  },
-  {
-    id: "۷",
-    number: "۰",
-    customer: "هلدینگ بابک زنجانی",
-    description: "سه هزار میلیارد پول نفت ملت",
-    totalSum: "۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰",
-    discount: "۰",
-    type: "مسروقه",
-    status: "زندانی",
-  },
-  {
-    id: "۸",
-    number: "۰",
-    customer: "هلدینگ بابک زنجانی",
-    description: "سه هزار میلیارد پول نفت ملت",
-    totalSum: "۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰",
-    discount: "۰",
-    type: "مسروقه",
-    status: "زندانی",
-  },
-  {
-    id: "۹",
-    number: "۰",
-    customer: "هلدینگ بابک زنجانی",
-    description: "سه هزار میلیارد پول نفت ملت",
-    totalSum: "۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰",
-    discount: "۰",
-    type: "مسروقه",
-    status: "زندانی",
-  },
-  {
-    id: "۱۰",
-    number: "۰",
-    customer: "هلدینگ بابک زنجانی",
-    description: "سه هزار میلیارد پول نفت ملت",
-    totalSum: "۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰",
-    discount: "۰",
-    type: "مسروقه",
-    status: "زندانی",
-  },
-];
+api
+  .get("http://localhost:3000/rows")
+  .then((responsive) => {
+    usersData.value = responsive.data;
+    console.log(responsive.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally(() => {
+    loading.value = false;
+  });
 </script>
