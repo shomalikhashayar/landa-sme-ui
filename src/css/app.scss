@@ -48,3 +48,17 @@
   border-top: none;
   background-color: white;
 }
+
+.my-card {
+  width: 100%;
+  max-width: auto;
+  border-radius: 9px;
+  border-bottom: 4px solid #494949;
+}
+
+.my-card-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 25px;
+}

@@ -1,6 +1,87 @@
 <template>
   <q-page class="">
-    <div class="" dir="rtl">
+    <div class="">
+      <div class="q-pt-md q-px-sm row justify-center items-center xs">
+        <q-card class="my-card bg-blue text-dark" flat>
+          <q-card-section class="my-card-section">
+            <div class="selected-rows">
+              <q-badge
+                rounded
+                color="bg-blue"
+                :label="selectedRows"
+                class="q-py-md q-px-md"
+                style="
+                  font-size: 22px;
+                  background-color: white;
+                  color: #2196f3;
+                  font-weight: bolder;
+                "
+              />
+            </div>
+            <div
+              class="total-offers-selected"
+              style="font-size: 11px; font-weight: bold; color: white"
+            >
+              <div class="title" style="opacity: 0.5">
+                <p>جمع تخفیف‌ها</p>
+              </div>
+              <div class="data" style="font-size: 14px"><p>۲۱۱,۰۵۲</p></div>
+            </div>
+            <div
+              class="total-proformas-selected"
+              style="font-size: 11px; font-weight: bold; color: white"
+            >
+              <div class="title" style="opacity: 0.5">
+                <p>جمع پیش فاکتورها</p>
+              </div>
+              <div class="data" style="font-size: 14px">
+                <p>۳,۵۱۶,۴۶۳,۲۴۹</p>
+              </div>
+            </div>
+          </q-card-section>
+        </q-card>
+      </div>
+      <div class="q-pt-md q-px-sm row justify-center items-center xs">
+        <q-card class="my-card bg-grey-5 text-dark" flat>
+          <q-card-section class="my-card-section">
+            <div class="selected-rows">
+              <q-badge
+                rounded
+                color="bg-dark"
+                class="q-px-md q-py-sm"
+                style="
+                  font-size: 22px;
+                  background-color: white;
+                  color: #494949;
+                  font-weight: bolder;
+                "
+              >
+                <q-icon name="check_circle" size="md" />
+              </q-badge>
+            </div>
+            <div
+              class="total-offers-selected"
+              style="font-size: 11px; font-weight: bold; color: black"
+            >
+              <div class="title" style="opacity: 0.3">
+                <p>جمع تخفیف‌ها</p>
+              </div>
+              <div class="data" style="font-size: 14px"><p>۲۰۰,۰۰۰</p></div>
+            </div>
+            <div
+              class="total-proformas-selected"
+              style="font-size: 11px; font-weight: bold; color: black"
+            >
+              <div class="title" style="opacity: 0.3">
+                <p>جمع پیش فاکتورها</p>
+              </div>
+              <div class="data" style="font-size: 14px">
+                <p>۱۴,۸۰۰,۰۰۰</p>
+              </div>
+            </div>
+          </q-card-section>
+        </q-card>
+      </div>
       <q-table
         :rows="usersData"
         :columns="columns"
@@ -12,23 +93,8 @@
         no-data-label="اطلاعاتی جهت نمایش وجود ندارد"
         no-results-label="نتیجه ای یافت نشد"
         :filter="filter"
-        class="q-pt-xl"
+        class="q-pt-xl gt-xs"
       >
-        <!-- <template v-slot:top-left>
-          <q-input
-            bordered
-            dense
-            debounce="300"
-            v-model="filter"
-            placeholder="فیلتر"
-            filled
-            class=""
-          >
-            <template v-slot:prepend>
-              <q-icon name="search" />
-            </template>
-          </q-input>
-        </template> -->
         <template v-slot:bottom-row>
           <q-tr class="">
             <q-td colspan="100%" class="bg-grey-4">۳,۰۰۰,۰۰۰,۰۰۰,۰۰۰,۰۰۰</q-td>
@@ -48,7 +114,7 @@
         </template>
       </q-table>
     </div>
-    <q-page-sticky position="top" expand class="toolbar q-mb-md">
+    <q-page-sticky position="top" expand class="toolbar q-mb-md gt-xs">
       <q-toolbar class="bg-white text-white q-ml-xs">
         <div
           class="toolbar-container flex justify-end q-gutter-md q-py-sm bg-white"
@@ -110,6 +176,7 @@ import { useQuasar } from "quasar";
 import { onMounted, onBeforeMount, onBeforeUnmount, onUnmounted } from "vue";
 
 const selected = ref([]);
+const selectedRows = ref("۴۹");
 
 const getSelectedString = () => {
   selected.value.length === 0
